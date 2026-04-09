@@ -1,38 +1,35 @@
-import Link from "next/link";
+import styles from "./Footer.module.css";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-neutral-800 bg-neutral-950">
-      <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-neutral-600">
+    <footer className={styles.footer}>
+      <div className={styles.inner}>
+        <p className={styles.copy}>
           © {currentYear} Marius. Alle Rechte vorbehalten.
         </p>
 
-        <div className="flex items-center gap-6">
-          <Link
+        <div className={styles.links}>
+          <a
             href="https://github.com/MariusUE"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-neutral-500 hover:text-[#1a3fff] transition-colors"
+            className={styles.link}
           >
             GitHub
-          </Link>
-          <Link
-            href="https://linkedin.com/in/DEIN-PROFIL"
+          </a>
+          <a
+            href="https://www.linkedin.com/in/marius-ueberhagen-ef"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-neutral-500 hover:text-[#1a3fff] transition-colors"
+            className={styles.link}
           >
             LinkedIn
-          </Link>
-          <Link
-            href="mailto:deine@email.de"
-            className="text-sm text-neutral-500 hover:text-[#1a3fff] transition-colors"
-          >
+          </a>
+          <a href="mailto:marius.ue@gmx.de" className={styles.link}>
             E-Mail
-          </Link>
+          </a>
         </div>
       </div>
     </footer>

@@ -1,0 +1,71 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: fit-content;
+}
+
+.eyebrow {
+  margin: 0 0 0.65rem;
+  align-self: flex-start;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--color-text-muted);
+}
+
+.title {
+  position: relative;
+  margin: 0;
+  display: inline-grid;
+  padding-right: 0.56em;
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.wordStack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ampersand {
+  position: absolute;
+  top: 50%;
+  right: -0.08em;
+  color: var(--color-text-muted);
+  line-height: 1;
+  transform: translateY(-52%);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 960px) {
+  .block {
+    align-items: center;
+  }
+
+  .title {
+    padding-left: 0.21em;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: clamp(2.6rem, 16vw, 4rem);
+  }
+}

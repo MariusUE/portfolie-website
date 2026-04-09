@@ -1,0 +1,103 @@
+.text {
+  position: relative;
+  display: inline-block;
+  color: var(--color-accent);
+  text-shadow: 0 0 0.64em rgba(26, 63, 255, 0.28);
+}
+
+.text::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent 32%,
+    rgba(255, 255, 255, 0.92) 46%,
+    rgba(184, 208, 255, 0.82) 50%,
+    rgba(255, 255, 255, 0.78) 54%,
+    transparent 68%,
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 220% 100%;
+  background-position: -140% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  filter: blur(0.04em);
+  pointer-events: none;
+  animation: glowSweep 5s linear infinite;
+}
+
+.text[data-phase="first"]::after,
+.text[data-phase="second"]::after {
+  animation-duration: 10s;
+}
+
+.text[data-phase="first"]::after {
+  animation-name: glowSweepFirst;
+}
+
+.text[data-phase="second"]::after {
+  animation-name: glowSweepSecond;
+}
+
+@keyframes glowSweep {
+  0% {
+    background-position: -140% 50%;
+    opacity: 0.74;
+  }
+
+  100% {
+    background-position: 140% 50%;
+    opacity: 0.74;
+  }
+}
+
+@keyframes glowSweepFirst {
+  0% {
+    background-position: -140% 50%;
+    opacity: 0.74;
+  }
+
+  49.99% {
+    background-position: 140% 50%;
+    opacity: 0.74;
+  }
+
+  50% {
+    background-position: 140% 50%;
+    opacity: 0;
+  }
+
+  100% {
+    background-position: 140% 50%;
+    opacity: 0;
+  }
+}
+
+@keyframes glowSweepSecond {
+  0% {
+    background-position: -140% 50%;
+    opacity: 0;
+  }
+
+  50% {
+    background-position: -140% 50%;
+    opacity: 0.74;
+  }
+
+  100% {
+    background-position: 140% 50%;
+    opacity: 0.74;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text::after {
+    animation: none;
+    opacity: 0;
+  }
+}

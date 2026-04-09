@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import styles from "./Header.module.css";
 
 const navItems = [
   { label: "About", href: "/about" },
@@ -13,26 +14,22 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-md relative">
-      <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-5">
-        <Link
-          href="/"
-          className="text-sm font-semibold tracking-wide text-[#1a3fff] hover:text-white transition-colors"
-        >
+    <header className={styles.header}>
+      <nav className={styles.nav}>
+        <Link href="/" className={styles.homeLink}>
           Marius
         </Link>
 
-        <ul className="flex items-center gap-8">
+        <ul className={styles.navList}>
           {navItems.map((item) => {
             const isActive = pathname === item.href;
+
             return (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`text-sm transition-colors ${
-                    isActive
-                      ? "text-white font-medium"
-                      : "text-neutral-400 hover:text-white"
+                  className={`${styles.navLink} ${
+                    isActive ? styles.navLinkActive : ""
                   }`}
                 >
                   {item.label}
@@ -42,7 +39,7 @@ export default function Header() {
           })}
         </ul>
       </nav>
-      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#1a3fff]/35" />
+      <div className={styles.divider} />
     </header>
   );
 }

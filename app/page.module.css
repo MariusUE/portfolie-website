@@ -1,0 +1,182 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: calc(var(--header-offset) + 1rem) 1.5rem 3rem;
+}
+
+.grid {
+  position: relative;
+  width: min(100%, var(--container-wide));
+  min-height: calc(100vh - var(--header-offset) - 4rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 22rem) minmax(0, 1fr);
+  align-items: end;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  padding-bottom: 4rem;
+}
+
+.column {
+  min-height: 28rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.columnRight {
+  text-align: right;
+}
+
+.contentBlock {
+  max-width: 24rem;
+  margin-top: clamp(-0.5rem, 4vh, 2.25rem);
+  margin-bottom: auto;
+}
+
+.columnRight .contentBlock {
+  margin-left: auto;
+}
+
+.socialList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.socialLink {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--color-text-soft);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.socialLink:hover,
+.socialLink:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--color-border-strong);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  outline: none;
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.photoColumn {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.photoFrame {
+  position: relative;
+  width: min(100%, 21rem);
+  height: clamp(28rem, 56vw, 32.5rem);
+}
+
+.photo {
+  object-fit: cover;
+  object-position: top;
+}
+
+.resumeLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.55rem;
+  margin-left: auto;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.resumeLink:hover,
+.resumeLink:focus-visible {
+  color: var(--color-accent);
+  outline: none;
+  transform: translateX(2px);
+}
+
+.resumeIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+@media (max-width: 960px) {
+  .page {
+    padding-top: calc(var(--header-offset) + 2rem);
+  }
+
+  .grid {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding-bottom: 2rem;
+  }
+
+  .column {
+    min-height: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .columnRight {
+    text-align: center;
+  }
+
+  .columnRight .contentBlock {
+    margin-left: 0;
+  }
+
+  .contentBlock {
+    margin: 0;
+  }
+
+  .socialList {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .resumeLink {
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: calc(var(--header-offset) + 1.25rem) 1rem 2rem;
+  }
+
+  .photoFrame {
+    width: min(78vw, 20rem);
+    height: min(112vw, 29rem);
+  }
+
+  .socialLink {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+}

@@ -1,0 +1,39 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+}
+
+.eyebrow {
+  margin: 0 0 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+@media (max-width: 960px) {
+  .block {
+    align-items: center;
+  }
+
+  .title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: clamp(2.6rem, 16vw, 4rem);
+  }
+}

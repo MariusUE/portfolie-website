@@ -1,4 +1,4 @@
-import Link from "next/link";
+import styles from "./page.module.css";
 
 const experience = [
   {
@@ -46,7 +46,7 @@ const skills = [
   },
   {
     category: "Web & Datenbanken",
-    items: ["HTML / CSS", "Tailwind CSS", "MySQL"],
+    items: ["HTML / CSS", "CSS Modules", "MySQL"],
   },
   {
     category: "Tools & Systeme",
@@ -60,27 +60,18 @@ const skills = [
 
 export default function Resume() {
   return (
-    <section className="max-w-5xl mx-auto px-6 pt-32 pb-20">
-      {/* Header */}
-      <div className="flex items-end justify-between mb-16">
-        <div>
-          <p className="text-[#1a3fff] text-sm font-medium tracking-wide mb-2">
-            Resume
-          </p>
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
-            Marius Überhagen
-          </h1>
-          <p className="text-neutral-400 mt-3">
+    <section className={styles.page}>
+      <div className={styles.header}>
+        <div className={styles.headerText}>
+          <p className={styles.eyebrow}>Resume</p>
+          <h1 className={styles.title}>Marius Überhagen</h1>
+          <p className={styles.subtitle}>
             Informatik-Student & Webentwickler — Erfurt
           </p>
         </div>
-        <a
-          href="/resume.zip"
-          download
-          className="flex items-center gap-2 px-5 py-2.5 border border-neutral-700 rounded-lg text-sm text-neutral-300 hover:border-[#1a3fff] hover:text-[#1a3fff] transition-colors"
-        >
+        <a href="/resume.zip" download className={styles.downloadLink}>
           <svg
-            className="w-4 h-4"
+            className={styles.downloadIcon}
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
@@ -96,91 +87,54 @@ export default function Resume() {
         </a>
       </div>
 
-      {/* Berufserfahrung */}
-      <div className="mb-16">
-        <h2 className="text-sm font-medium text-[#1a3fff] tracking-wide uppercase mb-8">
-          Berufserfahrung
-        </h2>
-        <div className="space-y-10">
-          {experience.map((item, i) => (
-            <div
-              key={i}
-              className="grid grid-cols-[180px_1fr] gap-8 group"
-            >
-              <span className="text-sm text-neutral-500 pt-1">
-                {item.period}
-              </span>
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>Berufserfahrung</h2>
+        <div className={styles.timeline}>
+          {experience.map((item) => (
+            <div key={`${item.role}-${item.period}`} className={styles.timelineItem}>
+              <span className={styles.period}>{item.period}</span>
               <div>
-                <h3 className="text-lg font-semibold text-white group-hover:text-[#1a3fff] transition-colors">
-                  {item.role}
-                </h3>
-                <p className="text-neutral-400 text-sm mt-0.5">
-                  {item.company}
-                </p>
-                <p className="text-neutral-500 text-sm mt-2 leading-relaxed">
-                  {item.description}
-                </p>
+                <h3 className={styles.entryTitle}>{item.role}</h3>
+                <p className={styles.entrySub}>{item.company}</p>
+                <p className={styles.entryText}>{item.description}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Trennlinie */}
-      <div className="h-[1px] bg-neutral-800 mb-16" />
+      <div className={styles.divider} />
 
-      {/* Ausbildung */}
-      <div className="mb-16">
-        <h2 className="text-sm font-medium text-[#1a3fff] tracking-wide uppercase mb-8">
-          Ausbildung
-        </h2>
-        <div className="space-y-10">
-          {education.map((item, i) => (
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>Ausbildung</h2>
+        <div className={styles.timeline}>
+          {education.map((item) => (
             <div
-              key={i}
-              className="grid grid-cols-[180px_1fr] gap-8 group"
+              key={`${item.degree}-${item.period}`}
+              className={styles.timelineItem}
             >
-              <span className="text-sm text-neutral-500 pt-1">
-                {item.period}
-              </span>
+              <span className={styles.period}>{item.period}</span>
               <div>
-                <h3 className="text-lg font-semibold text-white group-hover:text-[#1a3fff] transition-colors">
-                  {item.degree}
-                </h3>
-                <p className="text-neutral-400 text-sm mt-0.5">
-                  {item.school}
-                </p>
-                {item.detail && (
-                  <p className="text-neutral-500 text-sm mt-2">
-                    {item.detail}
-                  </p>
-                )}
+                <h3 className={styles.entryTitle}>{item.degree}</h3>
+                <p className={styles.entrySub}>{item.school}</p>
+                {item.detail && <p className={styles.entryText}>{item.detail}</p>}
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Trennlinie */}
-      <div className="h-[1px] bg-neutral-800 mb-16" />
+      <div className={styles.divider} />
 
-      {/* Skills */}
       <div>
-        <h2 className="text-sm font-medium text-[#1a3fff] tracking-wide uppercase mb-8">
-          Skills & Technologien
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-          {skills.map((group, i) => (
-            <div key={i}>
-              <h3 className="text-sm font-medium text-neutral-300 mb-3">
-                {group.category}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {group.items.map((item, j) => (
-                  <span
-                    key={j}
-                    className="px-3 py-1.5 text-xs font-medium text-neutral-300 bg-neutral-800/60 border border-neutral-700/50 rounded-md"
-                  >
+        <h2 className={styles.sectionTitle}>Skills & Technologien</h2>
+        <div className={styles.skillsGrid}>
+          {skills.map((group) => (
+            <div key={group.category} className={styles.skillGroup}>
+              <h3 className={styles.skillTitle}>{group.category}</h3>
+              <div className={styles.chipList}>
+                {group.items.map((item) => (
+                  <span key={item} className={styles.chip}>
                     {item}
                   </span>
                 ))}
