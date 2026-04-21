@@ -45,33 +45,33 @@ export default function About() {
   return (
     <section className={styles.page}>
       <p className={styles.eyebrow}>Über mich</p>
-      <h1 className={styles.title}>Vom Holz zum Code</h1>
+      <h1 className={styles.title}>
+        Effiziente Softwareentwicklung durch moderne Technologien
+      </h1>
 
       <div className={styles.story}>
         <p className={styles.storyText}>
-          Mein Weg in die IT war alles andere als geradlinig - und genau das
-          macht ihn besonders. Nach meinem Abitur an der Walter-Gropius-Schule
-          in Erfurt habe ich eine Ausbildung zum Tischler gemacht und drei Jahre
-          lang gelernt, wie man aus einem rohen Stück Holz etwas Präzises und
-          Funktionales baut.
+          Software soll unser Leben einfacher machen und Prozesse effizienter
+          gestalten. Genau an diesem Punkt möchte ich ansetzen und aktiv dazu
+          beitragen, mit gut durchdachten Lösungen echten Mehrwert zu schaffen.
         </p>
         <p className={styles.storyText}>
-          Was mich dabei am meisten fasziniert hat: der Moment, in dem ein Plan
-          zu einem fertigen Produkt wird. Dieses Gefühl hat mich nie losgelassen
-          - nur dass ich irgendwann gemerkt habe, dass ich es auch beim
-          Programmieren finde. Eine Idee nehmen, sie in Struktur übersetzen und
-          am Ende etwas Funktionierendes in den Händen halten.
+          Mit der richtigen Idee lassen sich komplexe Herausforderungen lösen
+          und innovative Systeme entwickeln. Gleichzeitig gehört für mich auch
+          der verantwortungsvolle Umgang mit diesen Systemen dazu. Insbesondere
+          deren Absicherung gegen typische Angriffsvektoren wie Cross-Site
+          Scripting (XSS) oder SQL-Injection. Diese Kombination aus Kreativität
+          und Sicherheitsbewusstsein macht für mich den Reiz der
+          Softwareentwicklung aus.
         </p>
         <p className={styles.storyText}>
-          Seit Oktober 2024 studiere ich Angewandte Informatik an der
-          Fachhochschule Erfurt. Mein Handwerkerhintergrund hilft mir dabei mehr
-          als man denkt: Sorgfalt, Problemlösung und der Anspruch, Dinge richtig
-          zu machen - das braucht man an der Werkbank genauso wie vor dem
-          Bildschirm.
-        </p>
-        <p className={`${styles.storyText} ${styles.storyHighlight}`}>
-          Aktuell suche ich eine Werkstudentenstelle in der Webentwicklung, um
-          das, was ich im Studium lerne, direkt in der Praxis anzuwenden.
+          Außerdem setze ich mich intensiv mit Künstlicher Intelligenz
+          auseinander, um neue Ansätze zu erschließen und Entwicklungsprozesse
+          gezielt zu optimieren. Aus genau diesem Grund finde ich es wichtig,
+          sie verantwortungsvoll und mit Bedacht zu nutzen. Um ein fundiertes
+          und praxisnahes Verständnis zu entwickeln, bilde ich mich in diesem
+          Bereich kontinuierlich weiter und experimentiere mit verschiedenen
+          Tools und Methoden.
         </p>
       </div>
 
