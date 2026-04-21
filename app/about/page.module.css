@@ -58,26 +58,25 @@
   text-transform: uppercase;
 }
 
-.learningGrid {
+.skillGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
 }
 
-.learningCard {
+.skillCard {
   padding: 1.5rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
   background: var(--color-surface);
   transition:
-    transform 0.2s ease,
     border-color 0.2s ease,
     background 0.2s ease;
 }
 
-.learningCard:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-border-strong);
+.skillCard:hover,
+.skillCard:focus-within {
+  border-color: rgba(83, 117, 255, 0.3);
   background: var(--color-surface-strong);
 }
 
@@ -88,31 +87,10 @@
 }
 
 .cardDescription {
-  margin: 0 0 1.15rem;
+  margin: 0;
   color: var(--color-text-soft);
   font-size: 0.95rem;
   line-height: 1.6;
-}
-
-.progressTrack {
-  width: 100%;
-  height: 0.5rem;
-  overflow: hidden;
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.progressBar {
-  height: 100%;
-  border-radius: var(--radius-pill);
-  background: linear-gradient(90deg, #1a3fff 0%, #5375ff 100%);
-  transition: width 0.35s ease;
-}
-
-.progressLabel {
-  margin: 0.75rem 0 0;
-  color: var(--color-text-soft);
-  font-size: 0.82rem;
 }
 
 .certificateGrid {
@@ -265,7 +243,7 @@
 }
 
 @media (max-width: 900px) {
-  .learningGrid {
+  .skillGrid {
     grid-template-columns: 1fr;
   }
 
@@ -297,7 +275,7 @@
     margin-bottom: 3rem;
   }
 
-  .learningCard {
+  .skillCard {
     padding: 1.25rem;
   }
 

@@ -34,3 +34,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Logbuch
+
+### 2026-04-10
+
+- About-Seite repariert, indem der interaktive Zertifikatsbereich in eine eigene Client-Komponente ausgelagert wurde.
+- About-Sektion "Was ich gerade lerne" in "Meine Skills" umbenannt und die Fortschrittsanzeigen aus den Skill-Karten entfernt.
+- Hover-Styling der Skill-Karten angepasst und auf einen dezent blau getoenten Rand reduziert.
+- Projects-Seite auf ein arraybasiertes Karten-Grid umgebaut, damit neue Projekte spaeter leicht per Datenobjekt ergaenzt werden koennen.
+- Erstes Projekt "FC Traumverein" mit Projektart und Kurzbeschreibung in das Projects-Grid aufgenommen.
